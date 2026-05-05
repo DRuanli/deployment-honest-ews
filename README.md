@@ -12,26 +12,6 @@ This repository contains the complete implementation, experiments, and reproduci
 
 ---
 
-## Table of Contents
-
-- [Key Highlights](#key-highlights)
-- [Problem Statement](#problem-statement)
-- [Contributions](#contributions)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Methodology](#methodology)
-- [Datasets](#datasets)
-- [Reproducing Experiments](#reproducing-experiments)
-- [Results Summary](#results-summary)
-- [Project Structure](#project-structure)
-- [Tech Stack](#tech-stack)
-- [Citation](#citation)
-- [License](#license)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
-
----
-
 ## Key Highlights
 
 - **Behavioural Leakage and Illusion of Actionability** formalized as EWS-specific failure modes
