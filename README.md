@@ -38,7 +38,7 @@ This repository contains the complete implementation, experiments, and reproduci
 - **$\mathrm{IUS}_{deploy}$** metric collapses to zero when temporal honesty or actionability fails
 - **DRE protocol** audits any EWS selector without retraining or pipeline changes
 - **Leakage coefficient $\tau$** rises monotonically with feature budget size
-- **Real-world deployment** at Vietnamese secondary school: 60% budget reduction with no loss in intervention coverage
+- **Real-world deployment** at Vietnamese secondary school
 
 ---
 
@@ -198,22 +198,6 @@ python experiments/oulad/run_oulad_baselines.py
 # Run DRE protocol on all methods
 python experiments/oulad/run_oulad_dre.py
 ```
-
-### Example Output
-
-```
-================================================================================
-IC-FS on OULAD | Horizon t=0 (Course Registration)
-================================================================================
-[Load] 32593 enrollments
-[Done] 512s
-
-Best α=0.50  F1_deploy=65.32  AR_available=0.857  IUS_deploy=56.01  Stability=0.823
-Top-5 features: ['pre_imd_band', 'pre_num_prev_attempts', 'pre_studied_credits', ...]
-
-  Saved results/oulad/oulad_icfs_h0.csv
-```
-
 ---
 
 ## Methodology
@@ -306,7 +290,6 @@ tau = (F1_paper - F1_deploy) / F1_paper  # Leakage coefficient
 - **Subject:** Mathematics
 - **Size:** 675 students
 - **Custom Taxonomy:** Adapted to Vietnamese educational context (parental occupation as Tier-1 actionable SES proxy)
-- **Results:** See `results/thcsmk/thcsmk_summary.csv` for 8-seed aggregated performance with Wilcoxon tests
 
 ---
 
@@ -519,46 +502,6 @@ deployment-honest-ews/
 
 ---
 
-## Citation
-
-If you use this code or dataset in your research, please cite:
-
-```bibtex
-@article{le2025deployment,
-  title={Behavioural Leakage and the Illusion of Actionability: A Deployment-Honest Evaluation Framework for Educational Early Warning Systems},
-  author={Le, Nguyen and Lam, Tri and Duong, Huu-Phuoc},
-  journal={Expert Systems with Applications},
-  year={2025},
-  publisher={Elsevier},
-  note={Under review}
-}
-```
-
-### Related Publications
-
-**Datasets:**
-```bibtex
-@inproceedings{kuzilek2017,
-  title={Open University Learning Analytics dataset},
-  author={Kuzilek, Jakub and Hlosta, Martin and Zdrahal, Zdenek},
-  booktitle={Scientific Data},
-  volume={4},
-  number={170171},
-  year={2017},
-  publisher={Nature Publishing Group}
-}
-
-@inproceedings{cortez2008,
-  title={Using data mining to predict secondary school student performance},
-  author={Cortez, Paulo and Silva, Alice},
-  booktitle={Proceedings of 5th Annual Future Business Technology Conference},
-  pages={5--12},
-  year={2008}
-}
-```
-
----
-
 ## License
 
 This project is licensed under the **MIT License**.
@@ -624,12 +567,11 @@ We thank the following organizations and individuals:
 
 - **OULAD:** [https://analyse.kmi.open.ac.uk/open_dataset](https://analyse.kmi.open.ac.uk/open_dataset)
 - **UCI Student Performance:** [https://archive.ics.uci.edu/ml/datasets/Student+Performance](https://archive.ics.uci.edu/ml/datasets/Student+Performance)
-- **THCSMK data:** Available upon request (subject to institutional ethics approval)
+- **THCSMK data:** The datasets generated and/or analyzed during the current study are not publicly available due to the privacy and security policies of Can Tho City Department of Education and Training, Vietnam. However, data may be made available from the corresponding author upon reasonable request and with permission from the institution.
 
 ### Code Availability
 
-- **GitHub Repository:** [https://github.com/YOUR_USERNAME/deployment-honest-ews](https://github.com/YOUR_USERNAME/deployment-honest-ews) *(Update with actual repository URL)*
-- **Zenodo DOI:** *(To be added after archival)*
+- **GitHub Repository:** [https://github.com/YOUR_USERNAME/deployment-honest-ews](https://github.com/DRuanli/deployment-honest-ews) *
 
 ---
 
@@ -650,36 +592,6 @@ We welcome contributions! Please follow these guidelines:
 - Include **docstrings** for all functions and classes
 - Add **unit tests** for new features (pytest framework)
 
-### Reporting Issues
-
-Please use the [GitHub Issues](https://github.com/YOUR_USERNAME/deployment-honest-ews/issues) tracker to report bugs or request features.
-
----
-
-## FAQ
-
-**Q: Can I use IC-FS on my own educational dataset?**
-A: Yes! Adapt the taxonomy in `src/icfs/taxonomy_*.py` to match your institutional context and feature types.
-
-**Q: How do I choose the optimal $\alpha$ value?**
-A: IC-FS uses nested validation (Algorithm 1, Phase 1) to automatically select $\alpha^*$ on a held-out validation set. You can also run the full $\alpha$-sweep and inspect `results/*/icfs_*.csv`.
-
-**Q: Does DRE protocol work with deep learning models?**
-A: Yes! DRE is model-agnostic. Simply replace the RandomForestClassifier with your neural network and apply the same masking protocol.
-
-**Q: What if my dataset doesn't have temporal horizons?**
-A: The framework generalizes to any scenario where features have differential availability times. Define a custom availability function $\delta(f, h)$.
-
----
-
-## Version History
-
-- **v1.0.0** (2025-01-XX) – Initial release for ESWA submission
-  - IC-FS framework implementation
-  - OULAD, UCI, THCSMK experiments
-  - DRE protocol
-  - Multi-seed statistical validation
-
 ---
 
 ## Contact
@@ -692,8 +604,8 @@ For questions, collaborations, or data requests:
 
 ---
 
-**Last Updated:** 2025-01-XX
-**Repository:** [https://github.com/YOUR_USERNAME/deployment-honest-ews](https://github.com/YOUR_USERNAME/deployment-honest-ews)
+**Last Updated:** 2025-05-05
+**Repository:** [https://github.com/DRuanli/deployment-honest-ews](https://github.com/YOUR_USERNAME/deployment-honest-ews)
 
 ---
 
