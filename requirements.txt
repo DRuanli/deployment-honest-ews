@@ -1,0 +1,21 @@
+# IC-FS: Intervention-Constrained Feature Selection
+# Dependencies for Deployment-Honest EWS Evaluation Framework
+# Python 3.8+ required
+
+# Core numerical computing
+numpy>=1.21.0
+
+# Data manipulation and I/O
+pandas>=1.3.0
+pyarrow>=5.0.0  # For efficient Parquet file format
+
+# Machine learning and feature selection
+scikit-learn>=1.0.0
+
+# Statistical computing
+scipy>=1.7.0
+
+# Optional: For Jupyter notebook exploration
+# jupyter>=1.0.0
+# matplotlib>=3.3.0
+# seaborn>=0.11.0
